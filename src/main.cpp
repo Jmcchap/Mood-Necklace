@@ -29,7 +29,7 @@ void getTemp()
 {
  //read the analog voltage from the temperature IC
 
-  tempInVolts = analogRead(Max6608Out);
+  tempInVolts = analogRead(MAX6608Out);
 
 
 
@@ -54,23 +54,23 @@ void selectColor()
   {
     LEDcolor = "blue";
   }
-  elsif(tempInCelcius > 35 && tempInCelcius =< 36)
+  elseif(tempInCelcius > 35 && tempInCelcius =< 36)
   {
     LEDcolor = "cyan";
   }
-  elsif(tempInCelcius > 36 && tempInCelcius =< 37)
+  elseif(tempInCelcius > 36 && tempInCelcius =< 37)
   {
     LEDcolor = "green";
   } 
-  elsif(tempInCelcius > 37 && tempInCelcius =< 38)
+  elseif(tempInCelcius > 37 && tempInCelcius =< 38)
   {
     LEDcolor = "yellow";
   }
-  elsif(tempInCelcius > 38 && tempInCelcius =< 39)
+  elseif(tempInCelcius > 38 && tempInCelcius =< 39)
   {
     LEDcolor = "magenta";
   }
-  elsif(tempInCelcius >39 && tempInCelcius =< 40)
+  elseif(tempInCelcius >39 && tempInCelcius =< 40)
   {
     LED color = "red";
   }
@@ -94,16 +94,22 @@ void turnOnLEDS()
   {
     case "cyan":
       digitalWrite(greenPin, HIGH);
+      digitalWrite(bluePin, HIGH);
+      break;
     case "blue":
       digitalWrite(bluePin, HIGH);
       break;
     case "yellow":
       digitalWrite(redPin, HIGH);
+      digitalWrite(greenPin, HIGH);
+      break;
     case "green":
       digitalWrite(greenPin, HIGH);
       break;
     case "magenta":
       digitalWrite(bluePin, HIGH);
+      digitalWrite(redPin, HIGH);
+      break;
     case "red":
       digitalWrite(redPin, HIGH);
       break;
